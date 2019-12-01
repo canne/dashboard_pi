@@ -982,7 +982,7 @@ Calculate opt. CMG (angle & speed) for up- and downwind courses with bearing to 
 TargetxMG Polar::Calc_TargetCMG(double TWS, double TWD,  double BRG)
 {
 	TargetxMG TCMG,tcmg2;
-	TCMG.TargetAngle = -999;
+	TCMG.TargetAngle = NAN;
 	TCMG.TargetSpeed = -999;
 	double cmg;
 	int i_tws = wxRound(TWS);
@@ -1000,23 +1000,24 @@ TargetxMG Polar::Calc_TargetCMG(double TWS, double TWD,  double BRG)
       double diffAngle = curAngle - range;
       if (diffAngle > 359) diffAngle -= 360;
       if (diffAngle < -359) diffAngle += 360;
-      if (!std::isnan(windsp[i_tws].winddir[polang])){
+      if (!std::isnan(windsp[i_tws].winddir[polang]))
+      {
         cmg = windsp[i_tws].winddir[polang] * cos(diffAngle*M_PI / 180.);
-        if (cmg > TCMG.TargetSpeed) {
+        if (cmg > TCMG.TargetSpeed)
+        {
           TCMG.TargetSpeed = cmg;
 
           iIargetAngle = curAngle;
         }
       }
     }
-    if (TCMG.TargetSpeed == -999)TCMG.TargetSpeed = NAN;
-    if (iIargetAngle == -999)
-      TCMG.TargetAngle = NAN;
-    else
-      TCMG.TargetAngle = (double)iIargetAngle;
+    if (TCMG.TargetSpeed == -999) TCMG.TargetSpeed = NAN;
 
+    if (iIargetAngle != -999) TCMG.TargetAngle = (double)iIargetAngle;
+    
     if (TCMG.TargetAngle > 180) TCMG.TargetAngle = 360. - TCMG.TargetAngle;
-	return TCMG;
+	
+    return TCMG;
 }
 /**********************************************************************************
 in certain cases there exists a second, lower cmg on the other tack
