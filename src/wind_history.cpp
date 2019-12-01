@@ -266,11 +266,12 @@ void DashboardInstrument_WindDirHistory::SetData(
 #endif // _TACTICSPI_H_
     )
 {
-    if (st == OCPN_DBP_STC_TWD || st == OCPN_DBP_STC_TWS
 #ifdef _TACTICSPI_H_
-        && (!std::isnan(data))
+    if ( (st == OCPN_DBP_STC_TWD || st == OCPN_DBP_STC_TWS) && !std::isnan(data) )
+#else
+    if (st == OCPN_DBP_STC_TWD || st == OCPN_DBP_STC_TWS)
 #endif // _TACTICSPI_H_
-        ) {
+    {
         if (st == OCPN_DBP_STC_TWD) {
 #ifdef _TACTICSPI_H_
             m_TrueWindDir = data;

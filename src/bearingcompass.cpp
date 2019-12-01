@@ -93,9 +93,9 @@ DashboardInstrument_Dial(parent, id, title, cap_flag, 0, 360, 0, 360)
     m_ExpSmoothDegRange = 0.0;
     alpha_diffCogHdt = 0.1;
     m_LaylineDegRange = 0.0;
-    for (int i = 0; i < COGRANGE; i++)
-        m_COGRange[i] = 0;
-	m_Cog = -999.9;
+    for (int i = 0; i < COGRANGE; i++) m_COGRange[i] = 0;
+
+    m_Cog = -999.9;
 	m_ExpSmoothDiffCogHdt = 0.0;
 	m_oldExpSmoothDiffCogHdt = 0.0;
     mExpSmDegRange = new ExpSmooth(g_dalphaDeltCoG);

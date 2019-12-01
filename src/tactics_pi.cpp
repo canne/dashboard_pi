@@ -2544,15 +2544,17 @@ bool tactics_pi::SendSentenceToAllInstruments_GetCalculatedCurrent(
             //correct HDT with Leeway
             //------------------------------------
 
-            //         ^ Hdt, STW
-            // Wind   /
-            // -->   /        Leeway
-            //      /
-            //     /----------> CRS, STW (stw_corr or stw)
-            //     \
-            //      \        Current
-            //       \ COG,SOG
-            //        V
+            /*         ^ Hdt, STW
+             * Wind   /
+             * -->   /        Leeway
+             *      /
+             *     /----------> CRS, STW (stw_corr or stw)
+             *     \
+             *      \        Current
+             *       \ COG,SOG
+             *        V
+             */
+
             // if wind is from port, heel & mLeeway will be positive (to starboard), adding degrees on the compass rose
             //  CRS = Hdt + Leeway
             //  if wind is from starboard, heel/mLeeway are negative (to port), mLeeway has to be substracted from Hdt
@@ -2912,7 +2914,7 @@ void TacticsPreferencesDialog::TacticsPreferencesPanel()
     if (m_itemNotebook == NULL)
         return;
 
-	wxScrolledWindow *itemPanelNotebook03 = new wxScrolledWindow(m_itemNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL | wxVSCROLL);
+    wxScrolledWindow *itemPanelNotebook03 = new wxScrolledWindow(m_itemNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL | wxVSCROLL);
 
 	int scrollRate = 5;
 #ifdef __OCPN__ANDROID__
@@ -3265,7 +3267,7 @@ void TacticsPreferencesDialog::TacticsPreferencesPanel()
     //****************************************************************************************************
 	m_PersistentChartPolarAnimation = new wxCheckBox(itemPanelNotebook03, wxID_ANY, _("Persistent Chart Perf. Animations"));
 	itemFlexGridSizerExpData->Add(m_PersistentChartPolarAnimation, 0, wxEXPAND, 5);
-  m_PersistentChartPolarAnimation->SetValue(g_bPersistentChartPolarAnimation);
+    m_PersistentChartPolarAnimation->SetValue(g_bPersistentChartPolarAnimation);
 
     return;
 }

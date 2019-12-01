@@ -466,6 +466,7 @@ void DashboardInstrument_Dial::DrawData(wxGCDC* dc, double value,
                   // This case was already handled before, it's here just
                   // to avoid compiler warning.
                   return;
+            case DIAL_POSITION_TOPINSIDE:
             case DIAL_POSITION_INSIDE:
             {
                   TextPoint.x = m_cx - (width / 2) - 1;
