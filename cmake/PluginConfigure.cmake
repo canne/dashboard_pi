@@ -53,9 +53,14 @@ IF (NOT WIN32)
   ENDIF (UNIX AND NOT APPLE)
 endif(NOT WIN32)
 
-IF (CMAKE_SYSTEM_PROCESSOR MATCHES "arm*")
-  SET (ARCH "armhf")
+  IF (CMAKE_SYSTEM_PROCESSOR MATCHES "arm*")
+    IF (CMAKE_SIZEOF_VOID_P MATCHES "8")
+      SET (ARCH "arm64")
+  ADD_DEFINITIONS( -DARM64 )
+    ELSE ()
+      SET (ARCH "armhf")
   ADD_DEFINITIONS( -DARMHF )
+    ENDIF ()
 ENDIF (CMAKE_SYSTEM_PROCESSOR MATCHES "arm*")
 
 MESSAGE (STATUS "*** Build Architecture is ${ARCH}")
@@ -131,7 +136,7 @@ IF(MSVC)
 ENDIF(MSVC)
 
 IF(NOT DEFINED wxWidgets_USE_FILE)
-    SET(wxWidgets_FIND_COMPONENTS base core net xml html adv aui webview)
+  SET(wxWidgets_USE_LIBS base core net xml html adv aui)
 ENDIF(NOT DEFINED wxWidgets_USE_FILE)
 
 #  QT_ANDROID is a cross-build, so the native FIND_PACKAGE(wxWidgets...) and wxWidgets_USE_FILE is not useful.
