@@ -136,12 +136,11 @@ IF(MSVC)
 ENDIF(MSVC)
 
 IF(NOT DEFINED wxWidgets_USE_FILE)
-#  SET(wxWidgets_FIND_COMPONENTS base core net xml html adv aui webview)
-#  SET(wxWidgets_USE_LIBS base core net xml html adv aui)
-  SET(wxWidgets_USE_LIBS base core net xml html adv aui webview)
-# WIP: detection of wxWidget differs between platforms
-#      First settings => original, Win / Second ARM64 Bionic /Third ARM64 Focal
-#      Need a build test now first WIN + Focal (Breaks Bionic)
+  IF(UNIX)
+    SET(wxWidgets_USE_LIBS base core net xml html adv aui)
+  ELSE(UNIX)
+    SET(wxWidgets_FIND_COMPONENTS base core net xml html adv aui webview)
+  ENDIF(UNIX)
 ENDIF(NOT DEFINED wxWidgets_USE_FILE)
 
 #  QT_ANDROID is a cross-build, so the native FIND_PACKAGE(wxWidgets...) and wxWidgets_USE_FILE is not useful.
