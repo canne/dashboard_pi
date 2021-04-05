@@ -1,0 +1,82 @@
+:imagesdir: ../images/
+
+== DashT - Race, Engine/Energy, Signal K, Database, Line Graphs
+
+Enhanced replacement of Dashboard and Tactics plug-ins for OpenCPN v5.2
+or greater. All
+https://dashboard-tactics-pi.readthedocs.io/en/latest/dashinst/dashinst.html[Dashboard]
+*and*
+https://dashboard-tactics-pi.readthedocs.io/en/latest/dashinst/dashinst.html[Tactics]
+instruments are included within the same plug-in, no need to swap. The
+combination of network connectivity processing threads, enhanced Tactics
+originated numerical algorithms and the usage of latest web-development
+techniques allow _DashT_ to provide, in addition these great functions:
+
+* https://dashboard-tactics-pi.readthedocs.io/en/latest/tactics/tactics.html[Tactics]
+instruments and regatta/race processor has been improved, follow the
+link for details. To mention a few improvements:
+* https://dashboard-tactics-pi.readthedocs.io/en/latest/tactics/tactics.html#Average-Wind-Instrument[Average
+Wind Instrument] has a background thread which distributes the same
+information to all other instruments, such as the below Race assistant
+instruments. For that purpose it provides a short term and long term
+integration of the average wind, making it more suitable for different
+race configurations.The instrument itself has been modified accordingly:
+
+image::https_3a_2f_2flive.staticflickr.com_2f65535_2f50665664483_28cfc0a474_m.jpeg[]
+
+* A *new* Tactics instrument which may interest also cruisers is the
+registering odometer (i.e. an
+https://dashboard-tactics-pi.readthedocs.io/en/latest/tactics/tactics.html#Odograph[odograph])
+which has also two independent trip counters, one of which is
+persistent.
+
+image::https_3a_2f_2flive.staticflickr.com_2f65535_2f50666410606_e784884581_n.jpeg[]
+
+ https://dashboard-tactics-pi.readthedocs.io/en/latest/racestart/racestart.html[Race
+Start Line] training assistance with Zero Burn, laylines, marker
+dropping, favoured marker indicator, etc.
+
+image::https_3a_2f_2flive.staticflickr.com_2f65535_2f50403282303_9db99bc9b6_n.jpeg[]
+
+* https://dashboard-tactics-pi.readthedocs.io/en/latest/racemark/racemark.html[Race
+Mark] - your training assistance for windward/leeward races with ladder
+rungs, decision assistance for lifts/headers and a peek to next legs
+
+image::https_3a_2f_2flive.staticflickr.com_2f65535_2f50403987036_6c3aa55d87.jpeg[]
+
+* Rolling back every single detail of your race or training data or even
+long term cruising collected into
+https://dashboard-tactics-pi.readthedocs.io/en/latest/idbout/idbout.html[InfluxDB
+v2.0 time series database] - comes with helper scripts!
+
+image::https_3a_2f_2flive.staticflickr.com_2f65535_2f50404008171_e72b2e1f1b_w.jpeg[]
+
+* Visualisation of any collected data parameter underway either with a
+https://dashboard-tactics-pi.readthedocs.io/en/latest/linechart/linechart.html[built
+in line graphs] or by using
+https://dashboard-tactics-pi.readthedocs.io/en/latest/influxdb/influxdb.html#Grafana[external
+Grafana dashboard]
+
+image::https_3a_2f_2flive.staticflickr.com_2f65535_2f50403302708_10bbf64012_n.jpeg[]
+
+* https://dashboard-tactics-pi.readthedocs.io/en/latest/signalk/signalk.html[Signal
+K data delta channel connector] - by-passing OpenCPN (using different
+channel) - both for NMEA-0183 and NMEA-2000 originated data
+* _Ad infini_ creation of dials or numerical data
+https://dashboard-tactics-pi.readthedocs.io/en/latest/enginedjg/enginedjg.html[instruments
+for Engine and Energy Data] originating from NMEA-2000 data bus
+
+image::https_3a_2f_2flive.staticflickr.com_2f65535_2f50404026376_b9683b31d0_w.jpeg[]
+
+Documentation: https://dashboard-tactics-pi.readthedocs.io/[DashT@readthedocs.io]
+
+Github Account:
+https://github.com/canne/dashboard_tactics_pi[Dashboard-Tactics_pi]
+
+Cruisers Forum
+https://www.cruisersforum.com/forums/f134/dashboard-tactics-dash-t-226601.html[Dashboard-Tactics
+Thread]
+
+Download:
+https://github.com/canne/dashboard_tactics_pi/releases/latest[LatestStable] / https://github.com/canne/dashboard_tactics_pi/releases[betareleases] (Click on Assets tab to expand, select your platform's
+installer)

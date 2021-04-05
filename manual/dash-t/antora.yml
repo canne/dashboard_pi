@@ -1,0 +1,4 @@
+name: dash-t
+title: Dashboard Tactics
+version: '0.1'
+start_page: ROOT:dash-t.adoc
