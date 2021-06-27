@@ -91,6 +91,7 @@ public:
     wxString GetStandardPath();
     // implementation of parent classes methods (w/ call-backs)
     void OnContextMenuItemCallback(int id);
+    long long checkTimestamp( long long timestamp );
     void SendSentenceToAllInstruments(
         unsigned long long st, double value, wxString unit, long long timestamp=0LL);
     void pSendSentenceToAllInstruments(
@@ -215,7 +216,7 @@ private:
     long long            mUTCDateTzOffsetLL;
     long long            mUTCRealGpsEpoch;
     wxLongLong           mGNSSreceivedAtLocalMs;
-    wxLongLong           mGNSSvsLocalTimeDeltaMs;
+    long int             mGNSSvsLocalTimeDeltaS;
     bool                 mUntrustedLocalTime;
     bool                 mLogUntrustedLocalTimeNotify;
     int                  m_config_version;
@@ -227,6 +228,7 @@ private:
     int                  mVar_Watchdog;
     int                  mStW_Watchdog;
     int                  mSiK_Watchdog;
+    int                  mTim_Watchdog;
     bool                 mSiK_DPT_environmentDepthBelowKeel;
     int                  mSiK_navigationGnssMethodQuality;
     int                  mApS_Watchcat;
