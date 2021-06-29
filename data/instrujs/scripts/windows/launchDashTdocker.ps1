@@ -1,4 +1,4 @@
-﻿# /* $Id: launchDashTdocker.ps1, v1.0 2019/11/30 VaderDarth Exp $ */
+# /* $Id: launchDashTdocker.ps1, v1.0 2019/11/30 VaderDarth Exp $ */
 #
 # Windows PowerShell script to launch Docker container services for DashT#
 ##############################################################################
