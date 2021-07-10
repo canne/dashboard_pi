@@ -1,4 +1,25 @@
 {
+  "__inputs": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.5.7"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "pr0ps-trackmap-panel",
+      "name": "TrackMap",
+      "version": "2.1.2"
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -16,7 +37,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
+  "id": null,
   "links": [],
   "panels": [
     {
